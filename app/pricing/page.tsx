@@ -6,7 +6,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 
 // Mock Button component to avoid external dependencies.
-const Button = ({ children, className, ...props }) => {
+const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ children, className = "", ...props }) => {
   return (
     <button className={`rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 ${className}`} {...props}>
       {children}

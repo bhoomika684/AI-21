@@ -14,11 +14,11 @@ const services = [
     color: "bg-blue-50 text-blue-600",
   },
   {
-    title: "Resume Analysis",
+    title: "Video Analysis",
     description:
       "Advanced resume parsing and analysis system that extracts key information and matches candidates to job requirements.",
     icon: FileText,
-    href: "/recruitment/resume-analysis",
+    href: "/recruitment/video-analysis",
     color: "bg-green-50 text-green-600",
   },
   {
@@ -42,7 +42,7 @@ const services = [
     description:
       "AI-driven video interview analysis that evaluates communication skills, body language, and candidate engagement levels.",
     icon: Video,
-    href: "/recruitment/video-analysis",
+    href: "/recruitment/video--analysis",
     color: "bg-red-50 text-red-600",
   },
 ]

@@ -74,7 +74,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-red-50">
       <Header />
 
       <main className="py-20">
@@ -86,7 +86,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <p className="text-sm font-medium text-green-600 uppercase tracking-wide mb-4">GET IN TOUCH</p>
+            <p className="text-sm font-medium text-red-600 uppercase tracking-wide mb-4">GET IN TOUCH</p>
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Connect with us</h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We're here to help! Use the form below to send us a message, and our dedicated team will respond promptly.
@@ -104,8 +104,8 @@ export default function ContactPage() {
               {/* Contact Details */}
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-green-600" />
+                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-red-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
@@ -114,8 +114,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-green-600" />
+                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-6 w-6 text-red-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
@@ -124,8 +124,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-green-600" />
+                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-6 w-6 text-red-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
@@ -147,7 +147,7 @@ export default function ContactPage() {
                     <motion.a
                       key={index}
                       href={social.href}
-                      className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-green-100 hover:text-green-600 transition-colors"
+                      className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-red-100 hover:text-red-600 transition-colors"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       aria-label={social.label}
@@ -257,7 +257,7 @@ export default function ContactPage() {
                       <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-green-700 hover:bg-green-800 text-white py-3 text-lg font-medium disabled:opacity-50"
+                        className="w-full bg-red-700 hover:bg-red-800 text-white py-3 text-lg font-medium disabled:opacity-50"
                       >
                         {isSubmitting ? "Submitting..." : "Submit →"}
                       </Button>

@@ -24,10 +24,10 @@ const Footer = () => {
   const footerLinks = {
     product: [
       { name: "HireVision-Interviewer", href: "/recruitment/hirevision-interviewer" },
-      { name: "Resume Analysis", href: "/recruitment/resume-analysis" },
+      { name: "video Analysis", href: "/recruitment/video--analysis" },
       { name: "Test Platform", href: "/recruitment/test" },
       { name: "InterviewPro", href: "/recruitment/interview-pro" },
-      { name: "Video Analysis", href: "/recruitment/video-analysis" },
+      { name: "Video Analysis", href: "/recruitment/video--analysis" },
     ],
     company: [
       { name: "About Us", href: "/about" },

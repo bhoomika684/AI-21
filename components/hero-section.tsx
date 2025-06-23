@@ -73,7 +73,7 @@ import { motion } from 'framer-motion';
 
 // Mock Button component to avoid external dependencies.
 // This ensures the component runs without needing shadcn/ui.
-const Button = ({ children, className, ...props }) => {
+const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ children, className = "", ...props }) => {
   return (
     <button className={`rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 ${className}`} {...props}>
       {children}
@@ -84,7 +84,14 @@ const Button = ({ children, className, ...props }) => {
 // Placeholder for Image component. In a real Next.js app, you would typically
 // use 'next/image' for image optimization. Here, we use a standard <img> tag
 // and a placeholder URL for a standalone runnable example.
-const Image = ({ src, alt, width, height, className, style }) => {
+const Image: React.FC<{
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  className?: string;
+  style?: React.CSSProperties;
+}> = ({ src, alt, width, height, className, style }) => {
   return (
     <img src={src} alt={alt} width={width} height={height} className={className} style={style} />
   );
