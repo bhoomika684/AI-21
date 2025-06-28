@@ -1,328 +1,458 @@
+// "use client"
+
+// import type React from "react"
+
+// import { useState } from "react"
+// import { Card, CardContent } from "@/components/ui/card"
+// import { Button } from "@/components/ui/button"
+// import { motion, AnimatePresence } from "framer-motion"
+// import Link from "next/link"
+// import { Users, Eye, Building, ChevronDown, ChevronUp, ArrowRight } from "lucide-react"
+
+// const CompactRecruitmentServicesSection = () => {
+//   const [expandedServices, setExpandedServices] = useState<number[]>([1])
+
+//   const services = [
+//     {
+//       id: 1,
+//       title: "Hire Vision",
+//       icon: "Users",
+//       slug: "hire-vision",
+//       color: "bg-red-50 text-red-600 border-red-200",
+//       activeColor: "bg-red-600 text-white",
+//       description:
+//         "Comprehensive AI-powered hiring solution with intelligent interviewing, sourcing, and shortlisting capabilities.",
+//       products: [
+//         {
+//           name: "SmartInterview Pro",
+//           slug: "smart-interview-pro",
+//           description: "AI-powered interview conductor with real-time assessment",
+//           available: true,
+//         },
+//         {
+//           name: "TalentHunter Elite",
+//           slug: "talent-hunter-elite",
+//           description: "Advanced candidate sourcing with AI-driven matching",
+//           available: true,
+//         },
+//         {
+//           name: "QuickSelect Master",
+//           slug: "quick-select-master",
+//           description: "Intelligent shortlisting with predictive analytics",
+//           available: true,
+//         },
+//       ],
+//     },
+//     {
+//       id: 2,
+//       title: "Talent Vision",
+//       icon: "Eye",
+//       slug: "hire-vision/talent-vision", // Updated to match your file structure
+//       color: "bg-blue-50 text-blue-600 border-blue-200",
+//       activeColor: "bg-blue-600 text-white",
+//       description:
+//         "Advanced talent analytics and insights platform for comprehensive candidate evaluation and market intelligence.",
+//       products: [
+//         {
+//           name: "ResumeGenius AI",
+//           slug: "resume-genius-ai",
+//           description: "Next-gen resume analysis with deep learning insights",
+//           available: true,
+//         },
+//         {
+//           name: "TalentScope Analytics",
+//           slug: "talent-scope-analytics",
+//           description: "Comprehensive talent market analysis and benchmarking",
+//           available: true,
+//         },
+//         {
+//           name: "ProfileMaster Pro",
+//           slug: "profile-master-pro",
+//           description: "Advanced candidate profiling with behavioral insights",
+//           available: true,
+//         },
+//       ],
+//     },
+//     {
+//       id: 3,
+//       title: "Banking Vision",
+//       icon: "Building",
+//       slug: "hire-vision/banking-vision", // Updated to match your file structure
+//       color: "bg-green-50 text-green-600 border-green-200",
+//       activeColor: "bg-green-600 text-white",
+//       description:
+//         "Specialized financial services recruitment platform with compliance-focused hiring and risk assessment tools.",
+//       products: [
+//         {
+//           name: "FinanceHire Elite",
+//           slug: "finance-hire-elite",
+//           description: "Specialized financial sector recruitment solution",
+//           available: true,
+//         },
+//         {
+//           name: "BankingTalent Pro",
+//           slug: "banking-talent-pro",
+//           description: "Advanced banking professional assessment platform",
+//           available: true,
+//         },
+//         {
+//           name: "FinTech Recruiter",
+//           slug: "fintech-recruiter",
+//           description: "Modern fintech talent acquisition system",
+//           available: true,
+//         },
+//       ],
+//     },
+//   ]
+
+//   const getIcon = (iconName: string) => {
+//     switch (iconName) {
+//       case "Users":
+//         return Users
+//       case "Eye":
+//         return Eye
+//       case "Building":
+//         return Building
+//       default:
+//         return Users
+//     }
+//   }
+
+//   const toggleService = (serviceId: number, e: React.MouseEvent) => {
+//     // Prevent event bubbling and default link behavior
+//     e.preventDefault()
+//     e.stopPropagation()
+//     setExpandedServices((prev) =>
+//       prev.includes(serviceId) ? prev.filter((id) => id !== serviceId) : [...prev, serviceId],
+//     )
+//   }
+
+//   return (
+//     <section className="py-10 bg-gradient-to-br from-white via-red-50 to-rose-50">
+//       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.6 }}
+//           viewport={{ once: true }}
+//           className="text-center mb-8"
+//         >
+//           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Domain-Specific AI Solution</h2>
+//           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+//             Discover our AI-powered recruitment tools designed to streamline your hiring process.
+//           </p>
+//         </motion.div>
+
+//         <div className="space-y-4">
+//           {services.map((service, idx) => {
+//             const isExpanded = expandedServices.includes(service.id)
+//             const Icon = getIcon(service.icon)
+
+//             return (
+//               <motion.div
+//                 key={service.id}
+//                 initial={{ opacity: 0, y: 20 }}
+//                 animate={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: idx * 0.1 }}
+//               >
+//                 <Card className="overflow-hidden border-2 hover:shadow-lg transition-all duration-300">
+//                   <CardContent className="p-0">
+//                     {/* Service Header - Now Clickable */}
+//                     <div className="relative">
+//                       <Link href={`/services/${service.slug}`} className="block">
+//                         <div className="flex items-center cursor-pointer p-6 bg-white hover:bg-gray-50 transition-colors group">
+//                           <div
+//                             className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center ${service.color} group-hover:scale-105 transition-transform`}
+//                           >
+//                             <Icon className="w-6 h-6" />
+//                           </div>
+//                           <div className="ml-4 flex-1">
+//                             <div className="flex items-center gap-2">
+//                               <h3 className="text-xl font-bold text-gray-900 group-hover:text-red-600 transition-colors">
+//                                 {service.title}
+//                               </h3>
+//                               <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-red-600 group-hover:translate-x-1 transition-all" />
+//                             </div>
+//                             <p className="mt-1 text-gray-600">{service.description}</p>
+//                           </div>
+//                         </div>
+//                       </Link>
+//                       {/* Expand/Collapse Button - Positioned Absolutely */}
+//                       <button
+//                         onClick={(e) => toggleService(service.id, e)}
+//                         className="absolute top-6 right-6 p-2 hover:bg-gray-100 rounded-full transition-colors z-10"
+//                       >
+//                         {isExpanded ? (
+//                           <ChevronUp className="w-5 h-5 text-gray-400" />
+//                         ) : (
+//                           <ChevronDown className="w-5 h-5 text-gray-400" />
+//                         )}
+//                       </button>
+//                     </div>
+
+//                     {/* Expandable Products Section */}
+//                     <AnimatePresence>
+//                       {isExpanded && (
+//                         <motion.div
+//                           initial={{ height: 0, opacity: 0 }}
+//                           animate={{ height: "auto", opacity: 1 }}
+//                           exit={{ height: 0, opacity: 0 }}
+//                           transition={{ duration: 0.3, ease: "easeInOut" }}
+//                           className="overflow-hidden"
+//                         >
+//                           <div className="px-6 pb-6 bg-gradient-to-br from-gray-50 to-white">
+//                             <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+//                               {service.products.map((product, i) => (
+//                                 <motion.div
+//                                   key={i}
+//                                   initial={{ opacity: 0, y: 10 }}
+//                                   animate={{ opacity: 1, y: 0 }}
+//                                   transition={{ duration: 0.3, delay: i * 0.1 }}
+//                                   className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
+//                                 >
+//                                   <h4 className="text-lg font-semibold text-gray-900 mb-2">{product.name}</h4>
+//                                   <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.description}</p>
+//                                   {product.available ? (
+//                                     <Link href={`/services/${service.slug}/${product.slug}`}>       
+//                                     </Link>
+//                                   ) : (
+//                                     <Button size="sm" className="w-full bg-red-600 hover:bg-red-700 text-white">
+//                                       Know More
+//                                     </Button>
+//                                   )}
+//                                 </motion.div>
+//                               ))}
+//                             </div>
+//                           </div>
+//                         </motion.div>
+//                       )}
+//                     </AnimatePresence>
+//                   </CardContent>
+//                 </Card>
+//               </motion.div>
+//             )
+//           })}
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+// export default CompactRecruitmentServicesSection
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { motion, AnimatePresence } from "framer-motion"
-import {
-  Users,
-  FileText,
-  ClipboardCheck,
-  BarChart3,
-  Video,
-  CheckCircle,
-  Clock,
-  Target,
-  Brain,
-  Zap,
-  Shield,
-  ArrowDownCircle,
-  XCircle,
-} from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card" // Assuming shadcn/ui Card
+import { Button } from "@/components/ui/button" // Assuming shadcn/ui Button (though less used now)
+import { motion } from "framer-motion"
+import { Users, Eye, Building, ArrowRight, ChevronRight } from "lucide-react" // Added ChevronRight for list items
 
-const RecruitmentServicesSection = () => {
-  const [activeService, setActiveService] = useState<number>(1)
-  const [isSectionOpen, setIsSectionOpen] = useState<boolean>(false)
-
+const CompactRecruitmentServicesSection = () => {
+  // Original services data, adapted for the new layout with image URLs
   const services = [
     {
       id: 1,
-      title: "HireVision-Interviewer",
-      displayTitle: <>Interviewer</>,
-      icon: Users,
-      color: "bg-red-50 text-red-600 border-red-200",
-      activeColor: "bg-red-600 text-white",
+      title: "Hire Vision",
+      icon: "Users",
+      slug: "hire-vision",
+      imageUrl: "https://images.pexels.com/photos/355952/pexels-photo-355952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", // Updated image URL for 1st service
+      color: "bg-red-50 text-red-600 border-red-200", // Not directly used for background of card, but can be for icons
       description:
-        "AI-powered interviewer that conducts comprehensive candidate assessments with intelligent questioning and real-time evaluation.",
-      features: [
-        { icon: Brain, title: "AI-Powered Questioning", description: "Intelligent question generation." },
-        { icon: BarChart3, title: "Real-time Evaluation", description: "Instant assessment with analytics." },
-        { icon: Target, title: "Behavioral Analysis", description: "Assess communication and cultural fit." },
-        { icon: Clock, title: "Time Efficient", description: "Reduces interview time by 70%." },
-      ],
-      stats: [
-        { label: "Interviews Conducted", value: "50K+" },
-        { label: "Time Saved", value: "70%" },
-        { label: "Accuracy Rate", value: "94%" },
+        "Comprehensive AI-powered hiring solution with intelligent interviewing, sourcing, and shortlisting capabilities.",
+      products: [
+        {
+          name: "SmartInterview Pro",
+          slug: "smart-interview-pro",
+          description: "AI-powered interview conductor with real-time assessment",
+          // count: 5, // Dummy count for demonstration
+        },
+        {
+          name: "TalentHunter Elite",
+          slug: "talent-hunter-elite",
+          description: "Advanced candidate sourcing with AI-driven matching",
+          // count: 12, // Dummy count
+        },
+        {
+          name: "QuickSelect Master",
+          slug: "quick-select-master",
+          description: "Intelligent shortlisting with predictive analytics",
+          // count: 8, // Dummy count
+        },
+        {
+          name: "Candidate Profiler",
+          slug: "candidate-profiler",
+          description: "Detailed candidate insights",
+          // count: 3, // Dummy count
+        },
       ],
     },
     {
       id: 2,
-      title: "Resume Analysis",
-      icon: FileText,
-      color: "bg-rose-50 text-rose-600 border-rose-200",
-      activeColor: "bg-rose-600 text-white",
+      title: "Talent Vision",
+      icon: "Eye",
+      slug: "hire-vision/talent-vision",
+      imageUrl: "https://images.pexels.com/photos/3771055/pexels-photo-3771055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", // Updated image URL for 2nd service
+      color: "bg-blue-50 text-blue-600 border-blue-200", // Can be adjusted if icons were used
       description:
-        "Advanced AI-powered resume parsing and analysis system that extracts key information and matches candidates to job requirements.",
-      features: [
-        { icon: Zap, title: "Smart Parsing", description: "Extract info from any format." },
-        { icon: Target, title: "Job Matching", description: "Scores candidate fit accurately." },
-        { icon: BarChart3, title: "Skills Assessment", description: "Skill levels, certification check." },
-        { icon: CheckCircle, title: "Quality Scoring", description: "Improvement suggestions & ATS score." },
-      ],
-      stats: [
-        { label: "Resumes Processed", value: "100K+" },
-        { label: "Parsing Accuracy", value: "99%" },
-        { label: "Processing Speed", value: "2 sec" },
+        "Advanced talent analytics and insights platform for comprehensive candidate evaluation and market intelligence.",
+      products: [
+        {
+          name: "ResumeGenius AI",
+          slug: "resume-genius-ai",
+          description: "Next-gen resume analysis with deep learning insights",
+          // count: 7,
+        },
+        {
+          name: "TalentScope Analytics",
+          slug: "talent-scope-analytics",
+          description: "Comprehensive talent market analysis and benchmarking",
+          // count: 15,
+        },
+        {
+          name: "ProfileMaster Pro",
+          slug: "profile-master-pro",
+          description: "Advanced candidate profiling with behavioral insights",
+          // count: 10,
+        },
+        {
+          name: "Market Intelligence",
+          slug: "market-intelligence",
+          description: "Insights into talent market trends",
+          // count: 4,
+        },
       ],
     },
     {
       id: 3,
-      title: "Test",
-      icon: ClipboardCheck,
-      color: "bg-red-50 text-red-600 border-red-200",
-      activeColor: "bg-red-600 text-white",
+      title: "Banking Vision",
+      icon: "Building",
+      slug: "hire-vision/banking-vision",
+      imageUrl: "https://images.pexels.com/photos/351264/pexels-photo-351264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", // Updated image URL for 3rd service
+      color: "bg-green-50 text-green-600 border-green-200", // Can be adjusted if icons were used
       description:
-        "Comprehensive testing platform with customizable assessments for technical skills, aptitude, and personality evaluation.",
-      features: [
-        { icon: Brain, title: "Technical Assessments", description: "Coding, system design, tech skills." },
-        { icon: Target, title: "Aptitude Testing", description: "Logical, numerical & reasoning." },
-        { icon: Users, title: "Personality Insights", description: "Behavioral and culture fit." },
-        { icon: Shield, title: "Anti-Cheating", description: "Proctoring, plagiarism detection." },
-      ],
-      stats: [
-        { label: "Tests Created", value: "25K+" },
-        { label: "Question Bank", value: "500K+" },
-        { label: "Success Rate", value: "96%" },
-      ],
-    },
-    {
-      id: 4,
-      title: "InterviewPro",
-      icon: BarChart3,
-      color: "bg-rose-50 text-rose-600 border-rose-200",
-      activeColor: "bg-rose-600 text-white",
-      description:
-        "Professional interview management system with scheduling, feedback collection, and collaborative decision-making tools.",
-      features: [
-        { icon: Clock, title: "Smart Scheduling", description: "Calendar integration and optimization." },
-        { icon: Users, title: "Team Collaboration", description: "Shared notes, decision tracking." },
-        { icon: BarChart3, title: "Analytics Dashboard", description: "Performance and hiring metrics." },
-        { icon: CheckCircle, title: "Feedback System", description: "Customizable evaluation forms." },
-      ],
-      stats: [
-        { label: "Interviews Scheduled", value: "75K+" },
-        { label: "Time Saved", value: "80%" },
-        { label: "User Satisfaction", value: "98%" },
-      ],
-    },
-    {
-      id: 5,
-      title: "Video Analysis",
-      icon: Video,
-      color: "bg-red-50 text-red-600 border-red-200",
-      activeColor: "bg-red-600 text-white",
-      description:
-        "AI-driven video interview analysis that evaluates communication skills, body language, and candidate engagement levels.",
-      features: [
-        { icon: Video, title: "Visual Analysis", description: "Posture, expression, eye contact." },
-        { icon: Brain, title: "Speech Analysis", description: "Tone, pace, confidence indicators." },
-        { icon: Target, title: "Engagement Metrics", description: "Responsiveness and attention." },
-        { icon: BarChart3, title: "Predictive Insights", description: "Fit prediction using video AI." },
-      ],
-      stats: [
-        { label: "Videos Analyzed", value: "30K+" },
-        { label: "Accuracy Rate", value: "92%" },
-        { label: "Insights Generated", value: "150+" },
+        "Specialized financial services recruitment platform with compliance-focused hiring and risk assessment tools.",
+      products: [
+        {
+          name: "FinanceHire Elite",
+          slug: "finance-hire-elite",
+          description: "Specialized financial sector recruitment solution",
+          // count: 9,
+        },
+        {
+          name: "BankingTalent Pro",
+          slug: "banking-talent-pro",
+          description: "Advanced banking professional assessment platform",
+          // count: 6,
+        },
+        {
+          name: "FinTech Recruiter",
+          slug: "fintech-recruiter",
+          description: "Modern fintech talent acquisition system",
+          // count: 11,
+        },
+        {
+          name: "Compliance Check",
+          slug: "compliance-check",
+          description: "Automated compliance verification",
+          // count: 2,
+        },
       ],
     },
   ]
 
-  const handleServiceClick = (id: number) => setActiveService(id)
-  const activeServiceData = services.find((s) => s.id === activeService)
+  // Helper function to get the Lucide icon component based on its name string (not used in this layout)
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
+      case "Users":
+        return Users
+      case "Eye":
+      case "Building":
+        return Building // Using Building for Eye and Building as they are not explicitly used in the new layout
+      default:
+        return Users
+    }
+  }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white via-red-50 to-rose-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-10 bg-gradient-to-br from-red-50 to-red-100 font-inter"> {/* Updated background gradient */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Heading and Description */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center space-y-1 mb-10"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">Recruitment Solution</h2>
-          <br />
-          <div className="flex flex-col items-center justify-center space-y-4">
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our AI-powered recruitment tools designed to streamline your hiring process.
-            </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                onClick={() => setIsSectionOpen(!isSectionOpen)}
-                className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full shadow-lg flex items-center space-x-2 transition-all duration-300"
-              >
-                {isSectionOpen ? (
-                  <>
-                    <span>Hide Details</span> <XCircle className="h-5 w-5" />
-                  </>
-                ) : (
-                  <>
-                    <span>Click Here</span> <ArrowDownCircle className="h-5 w-5" />
-                  </>
-                )}
-              </Button>
-            </motion.div>
-          </div>
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight">
+            Our Advanced AI Recruitment Solutions
+          </h2>
+          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+            Explore our cutting-edge AI-powered tools designed to revolutionize your hiring process across various
+            domains.
+          </p>
         </motion.div>
 
-        <AnimatePresence>
-          {isSectionOpen && (
+        {/* Grid for Service Cards - Adapts to 1, 2, or 3 columns based on screen size */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, idx) => (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="overflow-hidden"
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              viewport={{ once: true }}
             >
-              <div className="text-left text-gray-600 max-w-3xl mx-auto mt-8">
-                <h1 className="text-2xl font-bold text-red-600">Hire Vision</h1>
-              </div>
-              <br />
+              <Card className="overflow-hidden border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+                <CardContent className="p-0">
+                  {/* Image at the top of the card */}
+                  <div className="w-full h-48 overflow-hidden">
+                    <img
+                      src={service.imageUrl}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                      // Fallback for image loading errors
+                      onError={(e) => {
+                        e.currentTarget.src = `https://placehold.co/600x400/FFCCCC/880000?text=Image+Error`; // Red-themed fallback
+                        e.currentTarget.onerror = null; // Prevent infinite loop
+                      }}
+                    />
+                  </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-                <div className="space-y-4">
-                  {services.map((s, i) => {
-                    const Icon = s.icon
-                    const isActive = s.id === activeService
-                    return (
-                      <motion.div
-                        key={s.id}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        transition={{ duration: 0.6, delay: i * 0.1 }}
-                      >
-                        <Card
-                          className={`cursor-pointer transition-all border-2 ${
-                            isActive
-                              ? "border-red-500 bg-gradient-to-r from-red-50 to-rose-50 shadow-xl"
-                              : "border-gray-200 hover:border-gray-300 hover:shadow-md"
-                          }`}
-                          onClick={() => handleServiceClick(s.id)}
-                        >
-                          <CardContent className="p-6">
-                            <div className="flex items-center space-x-4">
-                              <motion.div
-                                className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-                                  isActive ? s.activeColor : s.color
-                                }`}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                              >
-                                <Icon className="h-6 w-6" />
-                              </motion.div>
-                              <div className="flex-1">
-                                <h3 className="text-lg font-semibold text-gray-900">{s.displayTitle || s.title}</h3>
-                                <p className="text-sm text-gray-600 mt-1 line-clamp-2">{s.description}</p>
-                              </div>
-                              <motion.div
-                                className={`w-6 h-6 rounded-full border-2 ${
-                                  isActive ? "border-red-500 bg-red-500" : "border-gray-300"
-                                }`}
-                                whileHover={{ scale: 1.1 }}
-                              >
-                                {isActive && (
-                                  <motion.div
-                                    initial={{ scale: 0 }}
-                                    animate={{ scale: 1 }}
-                                    className="w-full h-full rounded-full bg-red-500 flex items-center justify-center"
-                                  >
-                                    <CheckCircle className="h-3 w-3 text-white" />
-                                  </motion.div>
-                                )}
-                              </motion.div>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </motion.div>
-                    )
-                  })}
-                </div>
+                  {/* Dark Title Bar */}
+                  <a
+                    href={`/services/${service.slug}`} // Make the entire bar clickable
+                    className="flex items-center justify-between bg-red-600 text-white p-4 cursor-pointer hover:bg-red-700 transition-colors" // Updated to red-800
+                  >
+                    <h3 className="text-xl font-bold">{service.title}</h3>
+                    {/* Plus icon (ArrowRight rotated) */}
+                    <ArrowRight className="w-6 h-6 transform rotate-0 transition-transform group-hover:rotate-45" />
+                  </a>
 
-                <div className="lg:sticky lg:top-8">
-                  <AnimatePresence mode="wait">
-                    {activeServiceData && (
-                      <motion.div
-                        key={activeServiceData.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.4 }}
-                      >
-                        <Card className="bg-gradient-to-br from-white to-red-50 shadow-2xl border-0 overflow-hidden">
-                          <CardContent className="p-8 space-y-8">
-                            <div className="text-center space-y-4">
-                              <motion.div
-                                className={`w-16 h-16 rounded-2xl mx-auto flex items-center justify-center ${activeServiceData.activeColor}`}
-                                whileHover={{ rotate: 5 }}
-                              >
-                                <activeServiceData.icon className="h-8 w-8" />
-                              </motion.div>
-                              <h3 className="text-2xl font-bold text-gray-900">
-                                {activeServiceData.displayTitle || activeServiceData.title}
-                              </h3>
-                              <p className="text-gray-600">{activeServiceData.description}</p>
-                            </div>
-
-                            <div className="grid grid-cols-3 gap-4">
-                              {activeServiceData.stats.map((s, i) => (
-                                <motion.div
-                                  key={i}
-                                  initial={{ opacity: 0, scale: 0.8 }}
-                                  animate={{ opacity: 1, scale: 1 }}
-                                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                                  className="text-center p-4 bg-white rounded-lg shadow-sm border border-red-100"
-                                >
-                                  <div className="text-2xl font-bold text-gray-900">{s.value}</div>
-                                  <div className="text-xs text-gray-600">{s.label}</div>
-                                </motion.div>
-                              ))}
-                            </div>
-
-                            <div className="space-y-4">
-                              <h4 className="text-lg font-semibold text-gray-900">Key Features</h4>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {activeServiceData.features.map((f, i) => (
-                                  <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
-                                    className="bg-white p-4 rounded-lg shadow-sm border border-red-100 space-y-2 hover:shadow-md transition-shadow"
-                                  >
-                                    <div className="flex items-center space-x-2">
-                                      <div className="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center">
-                                        <f.icon className="h-4 w-4 text-red-600" />
-                                      </div>
-                                      <h5 className="font-medium text-gray-900">{f.title}</h5>
-                                    </div>
-                                    <p className="text-sm text-gray-600">{f.description}</p>
-                                  </motion.div>
-                                ))}
-                              </div>
-                            </div>
-
-                            <div className="text-center pt-4">
-                              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 shadow-lg transition-all duration-300">
-                                  Try {activeServiceData.title} →
-                                </Button>
-                              </motion.div>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              </div>
+                  {/* Products List Section */}
+                  <div className="p-4 bg-white">
+                    <ul className="space-y-2">
+                      {service.products.map((product, i) => (
+                        <li key={i} className="flex items-center text-gray-700 text-base">
+                          <ChevronRight className="w-4 h-4 text-red-600 mr-2 flex-shrink-0" /> {/* Remains red */}
+                          <span className="flex-1">{product.name}</span>
+                          <span className="ml-2 text-red-600 font-semibold text-sm">
+                            {/* {product.count} */}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
-          )}
-        </AnimatePresence>
+          ))}
+        </div>
       </div>
     </section>
   )
 }
 
-export default RecruitmentServicesSection
+export default CompactRecruitmentServicesSection

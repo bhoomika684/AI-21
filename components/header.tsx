@@ -16,12 +16,12 @@ const Header = () => {
   ]
 
   const recruitmentServices = [
-    { name: "Recruitment", href: "/recruitment/hirevision-interviewer" },
-    { name: "Video Analysis", href: "recruitment\video-analysis" },
-    { name: "Coming Soon", href: "#" },
-    { name: "Coming Soon", href: "#" },
-    { name: "Coming Soon", href: "#" },
-  ]
+  { name: "Recruitment", href: "/recruitment/interview-pro" },
+  { name: "ResumeAnalysis", href: "<recruitment/video-analysis" },
+  { name: "Test", href: "#" },
+  { name: "Interview Pro", href: "#" },
+  { name: "Video Analysis", href: "#" },
+]
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -29,7 +29,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-red-700 transition-colors">
+            <Link href="/http://localhost:3000/" className="text-2xl font-bold text-gray-900 hover:text-red-700 transition-colors">
               AI 21
             </Link>
           </div>

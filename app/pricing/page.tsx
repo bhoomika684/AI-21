@@ -18,10 +18,10 @@ const PricingSection = () => {
   return (
     <>
     <Header/>
-    <section className="py-20 lg:py-32 bg-red-50 font-sans">
+    <section className="py-8 lg:py-10 bg-red-50 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Choose Your Perfect Plan</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Choose Your Perfect Plan</h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Simple, transparent pricing that scales with your needs. No hidden fees, no surprises.
           </p>
@@ -30,8 +30,8 @@ const PricingSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Basic Plan Card */}
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-transform transform hover:scale-105 duration-300">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Basic Plan</h3>
-            <p className="text-5xl font-extrabold text-red-600 mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Standard</h3>
+            <p className="text-3xl font-extrabold text-red-600 mb-6">
               $29<span className="text-lg text-gray-500">/month</span>
             </p>
             <ul className="text-gray-700 space-y-3 mb-8 flex-grow">
@@ -67,8 +67,8 @@ const PricingSection = () => {
 
           {/* Standard Plan Card (Highlighted) */}
           <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-red-600 flex flex-col items-center text-center transition-transform transform scale-105 duration-300">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Standard Plan</h3>
-            <p className="text-5xl font-extrabold text-red-600 mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Enterprice</h3>
+            <p className="text-3xl font-extrabold text-red-600 mb-6">
               $59<span className="text-lg text-gray-500">/month</span>
             </p>
             <ul className="text-gray-700 space-y-3 mb-8 flex-grow">
@@ -104,8 +104,8 @@ const PricingSection = () => {
 
           {/* Premium Plan Card */}
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-transform transform hover:scale-105 duration-300">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Premium Plan</h3>
-            <p className="text-5xl font-extrabold text-red-600 mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Enterprice Plus</h3>
+            <p className="text-3xl font-extrabold text-red-600 mb-6">
               $99<span className="text-lg text-gray-500">/month</span>
             </p>
             <ul className="text-gray-700 space-y-3 mb-8 flex-grow">

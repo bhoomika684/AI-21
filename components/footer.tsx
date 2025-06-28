@@ -23,9 +23,9 @@ const Footer = () => {
   // Footer navigation links organized by category
   const footerLinks = {
     product: [
-      { name: "HireVision-Interviewer", href: "/recruitment/hirevision-interviewer" },
-      { name: "video Analysis", href: "/recruitment/video--analysis" },
-      { name: "Test Platform", href: "/recruitment/test" },
+      { name: "Hire Vision", href: "/recruitment/hirevision-interviewer" },
+      { name: "Talent Vision", href: "/recruitment/video--analysis" },
+      { name: "Banking Vision", href: "/recruitment/test" },
       { name: "InterviewPro", href: "/recruitment/interview-pro" },
       { name: "Video Analysis", href: "/recruitment/video--analysis" },
     ],
@@ -67,7 +67,7 @@ const Footer = () => {
               className="lg:col-span-2 space-y-6"
             >
               <div>
-                <h3 className="text-2xl font-bold mb-4">AI 2!</h3>
+                <h3 className="text-2xl font-bold mb-4">AI 21</h3>
                 <p className="text-gray-400 mb-6">
                   Revolutionizing recruitment with AI-powered solutions. We help companies find the perfect candidates
                   through intelligent automation and data-driven insights.
@@ -77,15 +77,16 @@ const Footer = () => {
               {/* Contact Information */}
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-green-500" />
+                  <Mail className="h-5 w-5 text-red-500" />
                   <span className="text-gray-400">contact@AI 21.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-green-500" />
-                  <span className="text-gray-400">+1 (555) 123-4567</span>
+                  <Phone className="h-5 w-5 text-red-500" />
+                  <span className="text-gray-400">
++91 9876543210</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-green-500" />
+                  <MapPin className="h-5 w-5 text-red-500" />
                   <span className="text-gray-400">Mumbai</span>
                 </div>
               </div>
@@ -96,7 +97,7 @@ const Footer = () => {
                   <motion.a
                     key={index}
                     href="#"
-                    className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors"
+                    className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -114,7 +115,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <h4 className="text-lg font-semibold">Product</h4>
+              <h4 className="text-lg font-semibold">Domain</h4>
               <ul className="space-y-2">
                 {footerLinks.product.map((link, index) => (
                   <li key={index}>
@@ -182,7 +183,7 @@ const Footer = () => {
                   placeholder="Enter your email"
                   className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
                 />
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white group">
+                <Button className="w-full bg-red-600 hover:bg-red-700 text-white group">
                   Subscribe
                   <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
