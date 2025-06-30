@@ -260,7 +260,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/services/hire-vision/talent-vision" className="hover:text-white">
+              <a href="/services/hire-vision/traning-vision" className="hover:text-white">
                 Training-vision
               </a>
             </li>

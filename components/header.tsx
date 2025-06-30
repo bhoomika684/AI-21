@@ -321,7 +321,7 @@ const Header = () => {
 
   const recruitmentServices = [
     { name: "Hire-vision", href: "/services/hire-vision" },
-    { name: "Training-vision", href: "/services/hire-vision/talent-vision" },
+    { name: "Training-vision", href: "/services/hire-vision/training-vision" },
     { name: "Banking-vision", href: "/services/hire-vision/banking-vision" },
   ]
 
