@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Brain, Mic, Video, BarChart3, ArrowRight, Users, Shield, Target } from "lucide-react"
+import Footer from "@/components/footer"
+import Header from "@/components/header"
 
 const SmartInterviewProPage = () => {
   const features = [
@@ -48,6 +50,8 @@ const SmartInterviewProPage = () => {
   ]
 
   return (
+    <>
+    <Header/>
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-100">
       {/* Hero Section */}
       <section className="py-20">
@@ -191,6 +195,8 @@ const SmartInterviewProPage = () => {
         </div>
       </section>
     </div>
+    <Footer/>
+    </>
   )
 }
 

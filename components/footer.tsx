@@ -252,7 +252,7 @@ const Footer = () => {
 
         {/* Services */}
         <div>
-          <h4 className="text-lg font-semibold mb-4">Services</h4>
+          <h4 className="text-lg font-semibold mb-4">Domain</h4>
           <ul className="text-gray-400 space-y-2">
             <li>
               <a href="/services/hire-vision" className="hover:text-white">
@@ -260,7 +260,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/services/hire-vision/traning-vision" className="hover:text-white">
+              <a href="/services/hire-vision/training-vision" className="hover:text-white">
                 Training-vision
               </a>
             </li>
