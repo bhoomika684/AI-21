@@ -255,20 +255,16 @@ const Footer = () => {
           <h4 className="text-lg font-semibold mb-4">Domain</h4>
           <ul className="text-gray-400 space-y-2">
             <li>
-              <a href="/services/hire-vision" className="hover:text-white">
-                Hire-vision
+              <a href="/services/HireVision" className="hover:text-white">
+                HireVision
               </a>
             </li>
             <li>
-              <a href="/services/hire-vision/training-vision" className="hover:text-white">
-                Training-vision
+              <a href="/services/HireVision/LearningVision" className="hover:text-white">
+                LearningVision
               </a>
             </li>
-            <li>
-              <a href="/services/hire-vision/banking-vision" className="hover:text-white">
-                Banking-vision
-              </a>
-            </li>
+            {/* Removed Banking-vision as requested */}
           </ul>
         </div>
 

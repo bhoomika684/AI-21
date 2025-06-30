@@ -77,20 +77,20 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl lg:text-5xl font-extrabold text-white leading-tight drop-shadow-lg" // Increased font size, weight, and added shadow
+                className="text-4xl lg:text-5xl font-extrabold text-red-600 leading-tight drop-shadow-lg" // Increased font size, weight, and added shadow
               >
-                One Platform. 21 AI Products..
+                One Platform, 21 Domains Covered
                 <br />
-                <span className="text-red-600 font-extrabold">Where Intelligence Meets Impact</span> {/* Made 'AI 21' extra bold */}
+                <span className="text-white font-extrabold">Where AI Meets Domain-Specific Requirements</span> {/* Made 'AI 21' extra bold */}
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-lg md:text-xl text-gray-200 max-w-lg drop-shadow-md" // Increased font size for md screens and added subtle shadow
+                className="text-lg md:text-xl text-white max-w-lg drop-shadow-md" // Increased font size for md screens and added subtle shadow
               >
-                AI 21: 21 AI-Driven Products Transforming How Talent Meets Opportunity
+                AI-21: AI-powered products transforming challenges into solutions across domains.
               </motion.p>
             </div>
 

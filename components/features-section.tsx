@@ -10,57 +10,57 @@ const FeaturesSection = () => {
 
   const features = [
     {
-      icon: Brain,
-      title: "AI-Powered Recruitment",
+      icon: Brain, // Powered by Leading LLMs
+      title: "Powered by Leading LLMs",
       description:
-        "Our platform automatically adapts and optimizes recruitment processes using advanced AI algorithms and machine learning.",
+        "Integrates the latest and most relevant large language models (LLMs) for high-accuracy AI performance across tasks.",
       gradient: "from-green-400 to-emerald-600",
       bgColor: "bg-green-50",
       textColor: "text-green-600",
       delay: 0.1,
     },
     {
-      icon: Target,
-      title: "Smart Candidate Matching",
+      icon: Shield, // Enterprise-Grade Data Security
+      title: " Enterprise-Grade Data Security",
       description:
-        "Elevate your recruitment with intelligent candidate matching from 500+ data points to ensure perfect job fit.",
+        "Your data is protected with the highest standards of encryption, access control, and compliance.",
       gradient: "from-purple-400 to-violet-600",
       bgColor: "bg-purple-50",
       textColor: "text-purple-600",
       delay: 0.2,
     },
     {
-      icon: Users,
-      title: "Collaborative Hiring",
+      icon: Target, // Domain-Specific Intelligence
+      title: "Domain-Specific Intelligence",
       description:
-        "Streamline communication, share files, and manage recruitment efficiently within the team workspace.",
+        "Each AI solution is fine-tuned to the unique challenges and terminology of specialized domains.",
       gradient: "from-orange-400 to-red-500",
       bgColor: "bg-orange-50",
       textColor: "text-orange-600",
       delay: 0.3,
     },
     {
-      icon: Smartphone,
-      title: "Mobile-First Design",
-      description: "Access your recruitment dashboard anywhere with our responsive, mobile-optimized platform.",
+      icon: Zap, // Real-Time Processing
+      title: "Real-Time Processing",
+      description: "Lightning-fast execution enables instant decisions, responses, and automation at scale.",
       gradient: "from-blue-400 to-cyan-600",
       bgColor: "bg-blue-50",
       textColor: "text-blue-600",
       delay: 0.4,
     },
     {
-      icon: Zap,
-      title: "Lightning Fast Processing",
-      description: "Process thousands of applications in minutes with our high-performance recruitment engine.",
+      icon: Smartphone, // Mobile-First & Intuitive UI
+      title: "Device independent & Intuitive UI",
+      description: "Designed with accessibility and speed in mind, AI-21 performs seamlessly across devices.",
       gradient: "from-yellow-400 to-amber-500",
       bgColor: "bg-yellow-50",
       textColor: "text-yellow-600",
       delay: 0.5,
     },
     {
-      icon: Shield,
-      title: "Enterprise Security",
-      description: "Bank-level security with end-to-end encryption to protect sensitive candidate and company data.",
+      icon: Users, // Seamless Integrations
+      title: "Seamless Integrations",
+      description: "Easily integrates with your existing systems, platforms, and data workflows for smooth adoption.",
       gradient: "from-red-400 to-pink-600",
       bgColor: "bg-red-50",
       textColor: "text-red-600",
@@ -97,8 +97,16 @@ const FeaturesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            Powerful Features
+            Built on the Best – Powered for the Future
           </motion.h2>
+          <motion.p
+            className="text-lg text-gray-700 max-w-2xl mx-auto mt-2"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            Key Features That Make AI-21 Stand Out
+          </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

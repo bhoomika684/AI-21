@@ -1,65 +1,25 @@
-// "use client"
-
-// import Image from "next/image"
-
-// const PainPointsSection = () => {
-//   return (
-//     <section className="py-16 bg-red-50">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10">
-//         {/* Card 1 */}
-//         <div className="flex items-start space-x-6">
-//           <div className="flex-shrink-0">
-//             <Image
-//               src="/images/business-plan-schedule.jpg" // Updated image source
-//               alt="High Operational Costs"
-//               width={160}
-//               height={160}
-//               className="rounded-lg object-cover"
-//             />
-//           </div>
-//           <div>
-//             <h3 className="text-xl font-semibold text-gray-900 mb-2">
-//               High Operational Costs
-//             </h3>
-//             <p className="text-gray-700">
-//               About <span className="text-purple-600 font-medium">14%</span> of service appointments* result in a second
-//               visit because of scheduling and dispatch errors.
-//             </p>
-//           </div>
-//         </div>
-
-//         {/* Card 2 */}
-//         <div className="flex items-start space-x-6">
-//           <div className="flex-shrink-0">
-//             <Image
-//               src="/images/macbook-ipad.jpg" // Updated image source
-//               alt="Improving NPS"
-//               width={160}
-//               height={160}
-//               className="rounded-lg object-cover"
-//             />
-//           </div>
-//           <div>
-//             <h3 className="text-xl font-semibold text-gray-900 mb-2">
-//               Improving NPS
-//             </h3>
-//             <p className="text-gray-700">
-//               A Microsoft survey indicates that{" "}
-//               <span className="text-purple-600 font-medium">61%</span> of consumers now have higher customer service
-//               standards than they did just one year ago, and field services is not exempt from these expectations.
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
-// export default PainPointsSection
 "use client"
 
 const PainPointsSection = () => {
-  return null
+  return (
+    <section className="py-16 bg-gradient-to-r from-red-500 to-red-700 text-white text-center">
+      <div className="max-w-5xl mx-auto px-4">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Ready to unlock the power of <br /> real-time AI insights?</h2>
+        <div className="mb-10">
+          <p className="text-2xl md:text-2xl font-semibold">
+            Reimagine work with AI-21 — let’s get started.
+          </p>
+        </div>
+        <div className="flex flex-col md:flex-row justify-center gap-6">
+          <a href="/contact">
+            <button className="bg-transparent border border-white text-white font-semibold text-xl px-10 py-4 rounded-xl hover:bg-white hover:text-red-700 transition-all">
+              Contact Us
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default PainPointsSection

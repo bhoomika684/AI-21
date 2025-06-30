@@ -1,244 +1,3 @@
-// "use client"
-
-// import type React from "react"
-
-// import { useState } from "react"
-// import { Card, CardContent } from "@/components/ui/card"
-// import { Button } from "@/components/ui/button"
-// import { motion, AnimatePresence } from "framer-motion"
-// import Link from "next/link"
-// import { Users, Eye, Building, ChevronDown, ChevronUp, ArrowRight } from "lucide-react"
-
-// const CompactRecruitmentServicesSection = () => {
-//   const [expandedServices, setExpandedServices] = useState<number[]>([1])
-
-//   const services = [
-//     {
-//       id: 1,
-//       title: "Hire Vision",
-//       icon: "Users",
-//       slug: "hire-vision",
-//       color: "bg-red-50 text-red-600 border-red-200",
-//       activeColor: "bg-red-600 text-white",
-//       description:
-//         "Comprehensive AI-powered hiring solution with intelligent interviewing, sourcing, and shortlisting capabilities.",
-//       products: [
-//         {
-//           name: "SmartInterview Pro",
-//           slug: "smart-interview-pro",
-//           description: "AI-powered interview conductor with real-time assessment",
-//           available: true,
-//         },
-//         {
-//           name: "TalentHunter Elite",
-//           slug: "talent-hunter-elite",
-//           description: "Advanced candidate sourcing with AI-driven matching",
-//           available: true,
-//         },
-//         {
-//           name: "QuickSelect Master",
-//           slug: "quick-select-master",
-//           description: "Intelligent shortlisting with predictive analytics",
-//           available: true,
-//         },
-//       ],
-//     },
-//     {
-//       id: 2,
-//       title: "Talent Vision",
-//       icon: "Eye",
-//       slug: "hire-vision/talent-vision", // Updated to match your file structure
-//       color: "bg-blue-50 text-blue-600 border-blue-200",
-//       activeColor: "bg-blue-600 text-white",
-//       description:
-//         "Advanced talent analytics and insights platform for comprehensive candidate evaluation and market intelligence.",
-//       products: [
-//         {
-//           name: "ResumeGenius AI",
-//           slug: "resume-genius-ai",
-//           description: "Next-gen resume analysis with deep learning insights",
-//           available: true,
-//         },
-//         {
-//           name: "TalentScope Analytics",
-//           slug: "talent-scope-analytics",
-//           description: "Comprehensive talent market analysis and benchmarking",
-//           available: true,
-//         },
-//         {
-//           name: "ProfileMaster Pro",
-//           slug: "profile-master-pro",
-//           description: "Advanced candidate profiling with behavioral insights",
-//           available: true,
-//         },
-//       ],
-//     },
-//     {
-//       id: 3,
-//       title: "Banking Vision",
-//       icon: "Building",
-//       slug: "hire-vision/banking-vision", // Updated to match your file structure
-//       color: "bg-green-50 text-green-600 border-green-200",
-//       activeColor: "bg-green-600 text-white",
-//       description:
-//         "Specialized financial services recruitment platform with compliance-focused hiring and risk assessment tools.",
-//       products: [
-//         {
-//           name: "FinanceHire Elite",
-//           slug: "finance-hire-elite",
-//           description: "Specialized financial sector recruitment solution",
-//           available: true,
-//         },
-//         {
-//           name: "BankingTalent Pro",
-//           slug: "banking-talent-pro",
-//           description: "Advanced banking professional assessment platform",
-//           available: true,
-//         },
-//         {
-//           name: "FinTech Recruiter",
-//           slug: "fintech-recruiter",
-//           description: "Modern fintech talent acquisition system",
-//           available: true,
-//         },
-//       ],
-//     },
-//   ]
-
-//   const getIcon = (iconName: string) => {
-//     switch (iconName) {
-//       case "Users":
-//         return Users
-//       case "Eye":
-//         return Eye
-//       case "Building":
-//         return Building
-//       default:
-//         return Users
-//     }
-//   }
-
-//   const toggleService = (serviceId: number, e: React.MouseEvent) => {
-//     // Prevent event bubbling and default link behavior
-//     e.preventDefault()
-//     e.stopPropagation()
-//     setExpandedServices((prev) =>
-//       prev.includes(serviceId) ? prev.filter((id) => id !== serviceId) : [...prev, serviceId],
-//     )
-//   }
-
-//   return (
-//     <section className="py-10 bg-gradient-to-br from-white via-red-50 to-rose-50">
-//       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <motion.div
-//           initial={{ opacity: 0, y: 20 }}
-//           whileInView={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.6 }}
-//           viewport={{ once: true }}
-//           className="text-center mb-8"
-//         >
-//           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Domain-Specific AI Solution</h2>
-//           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-//             Discover our AI-powered recruitment tools designed to streamline your hiring process.
-//           </p>
-//         </motion.div>
-
-//         <div className="space-y-4">
-//           {services.map((service, idx) => {
-//             const isExpanded = expandedServices.includes(service.id)
-//             const Icon = getIcon(service.icon)
-
-//             return (
-//               <motion.div
-//                 key={service.id}
-//                 initial={{ opacity: 0, y: 20 }}
-//                 animate={{ opacity: 1, y: 0 }}
-//                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-//               >
-//                 <Card className="overflow-hidden border-2 hover:shadow-lg transition-all duration-300">
-//                   <CardContent className="p-0">
-//                     {/* Service Header - Now Clickable */}
-//                     <div className="relative">
-//                       <Link href={`/services/${service.slug}`} className="block">
-//                         <div className="flex items-center cursor-pointer p-6 bg-white hover:bg-gray-50 transition-colors group">
-//                           <div
-//                             className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center ${service.color} group-hover:scale-105 transition-transform`}
-//                           >
-//                             <Icon className="w-6 h-6" />
-//                           </div>
-//                           <div className="ml-4 flex-1">
-//                             <div className="flex items-center gap-2">
-//                               <h3 className="text-xl font-bold text-gray-900 group-hover:text-red-600 transition-colors">
-//                                 {service.title}
-//                               </h3>
-//                               <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-red-600 group-hover:translate-x-1 transition-all" />
-//                             </div>
-//                             <p className="mt-1 text-gray-600">{service.description}</p>
-//                           </div>
-//                         </div>
-//                       </Link>
-//                       {/* Expand/Collapse Button - Positioned Absolutely */}
-//                       <button
-//                         onClick={(e) => toggleService(service.id, e)}
-//                         className="absolute top-6 right-6 p-2 hover:bg-gray-100 rounded-full transition-colors z-10"
-//                       >
-//                         {isExpanded ? (
-//                           <ChevronUp className="w-5 h-5 text-gray-400" />
-//                         ) : (
-//                           <ChevronDown className="w-5 h-5 text-gray-400" />
-//                         )}
-//                       </button>
-//                     </div>
-
-//                     {/* Expandable Products Section */}
-//                     <AnimatePresence>
-//                       {isExpanded && (
-//                         <motion.div
-//                           initial={{ height: 0, opacity: 0 }}
-//                           animate={{ height: "auto", opacity: 1 }}
-//                           exit={{ height: 0, opacity: 0 }}
-//                           transition={{ duration: 0.3, ease: "easeInOut" }}
-//                           className="overflow-hidden"
-//                         >
-//                           <div className="px-6 pb-6 bg-gradient-to-br from-gray-50 to-white">
-//                             <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-//                               {service.products.map((product, i) => (
-//                                 <motion.div
-//                                   key={i}
-//                                   initial={{ opacity: 0, y: 10 }}
-//                                   animate={{ opacity: 1, y: 0 }}
-//                                   transition={{ duration: 0.3, delay: i * 0.1 }}
-//                                   className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
-//                                 >
-//                                   <h4 className="text-lg font-semibold text-gray-900 mb-2">{product.name}</h4>
-//                                   <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.description}</p>
-//                                   {product.available ? (
-//                                     <Link href={`/services/${service.slug}/${product.slug}`}>       
-//                                     </Link>
-//                                   ) : (
-//                                     <Button size="sm" className="w-full bg-red-600 hover:bg-red-700 text-white">
-//                                       Know More
-//                                     </Button>
-//                                   )}
-//                                 </motion.div>
-//                               ))}
-//                             </div>
-//                           </div>
-//                         </motion.div>
-//                       )}
-//                     </AnimatePresence>
-//                   </CardContent>
-//                 </Card>
-//               </motion.div>
-//             )
-//           })}
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
-// export default CompactRecruitmentServicesSection
 "use client"
 
 import type React from "react"
@@ -254,9 +13,9 @@ const CompactRecruitmentServicesSection = () => {
   const services = [
     {
       id: 1,
-      title: "Hire Vision",
+      title: "HireVision",
       icon: "Users",
-      slug: "hire-vision",
+      slug: "HireVision",
       imageUrl: "https://images.pexels.com/photos/355952/pexels-photo-355952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", // Updated image URL for 1st service
       color: "bg-red-50 text-red-600 border-red-200", // Not directly used for background of card, but can be for icons
       description:
@@ -290,9 +49,9 @@ const CompactRecruitmentServicesSection = () => {
     },
     {
       id: 2,
-      title: "Traning Vision",
+      title: "LearningVision",
       icon: "Eye",
-      slug: "hire-vision/traning-vision",
+      slug: "HireVision/LearningVision",
       imageUrl: "https://images.pexels.com/photos/3771055/pexels-photo-3771055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", // Updated image URL for 2nd service
       color: "bg-blue-50 text-blue-600 border-blue-200", // Can be adjusted if icons were used
       description:
@@ -324,42 +83,7 @@ const CompactRecruitmentServicesSection = () => {
         },
       ],
     },
-    {
-      id: 3,
-      title: "Banking Vision",
-      icon: "Building",
-      slug: "hire-vision/banking-vision",
-      imageUrl: "https://images.pexels.com/photos/351264/pexels-photo-351264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", // Updated image URL for 3rd service
-      color: "bg-green-50 text-green-600 border-green-200", // Can be adjusted if icons were used
-      description:
-        "Specialized financial services recruitment platform with compliance-focused hiring and risk assessment tools.",
-      products: [
-        {
-          name: "FinanceHire Elite",
-          slug: "finance-hire-elite",
-          description: "Specialized financial sector recruitment solution",
-          // count: 9,
-        },
-        {
-          name: "BankingTalent Pro",
-          slug: "banking-talent-pro",
-          description: "Advanced banking professional assessment platform",
-          // count: 6,
-        },
-        {
-          name: "FinTech Recruiter",
-          slug: "fintech-recruiter",
-          description: "Modern fintech talent acquisition system",
-          // count: 11,
-        },
-        {
-          name: "Compliance Check",
-          slug: "compliance-check",
-          description: "Automated compliance verification",
-          // count: 2,
-        },
-      ],
-    },
+    // Removed Banking Vision section as requested
   ]
 
   // Helper function to get the Lucide icon component based on its name string (not used in this layout)
@@ -387,16 +111,18 @@ const CompactRecruitmentServicesSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight">
-            Our Advanced AI Recruitment Solutions
+            AI-Powered Solutions That Go Beyond Boundaries
           </h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our cutting-edge AI-powered tools designed to revolutionize your hiring process across various
-            domains.
+            Powering Progress Across Domains with Cutting-Edge AI
+          </p>
+          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+           AI-21 offers a suite of intelligent solutions built to address real-world challenges across diverse industries  from recruitment and training to finance, retail, and beyond.
           </p>
         </motion.div>
 
-        {/* Grid for Service Cards - Adapts to 1, 2, or 3 columns based on screen size */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Grid for Service Cards - Adjusted to 2 columns since Banking Vision is removed */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {services.map((service, idx) => (
             <motion.div
               key={service.id}
