@@ -1,3 +1,5 @@
+npm install @radix-ui/react-separator
+
 "use client"
 
 import * as React from "react"
