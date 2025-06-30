@@ -67,7 +67,7 @@ const PricingSection = () => {
 
           {/* Standard Plan Card (Highlighted) */}
           <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-red-600 flex flex-col items-center text-center transition-transform transform scale-105 duration-300">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Enterprice</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Enterprise</h3>
             <p className="text-3xl font-extrabold text-red-600 mb-6">
               $59<span className="text-lg text-gray-500">/month</span>
             </p>
@@ -104,7 +104,7 @@ const PricingSection = () => {
 
           {/* Premium Plan Card */}
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-transform transform hover:scale-105 duration-300">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Enterprice Plus</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Enterprise Plus</h3>
             <p className="text-3xl font-extrabold text-red-600 mb-6">
               $99<span className="text-lg text-gray-500">/month</span>
             </p>
