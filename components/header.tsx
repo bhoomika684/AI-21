@@ -320,8 +320,8 @@ const Header = () => {
   ]
 
   const recruitmentServices = [
-    { name: "Hire-vision", href: "/services/hire-vision" },
-    { name: "LearningVision", href: "/services/hire-vision/LearningVision" },
+    { name: "HireVision", href: "/Domain/HireVision" },
+    { name: "LearningVision", href: "/Domain/LearningVision" },
     // Removed Banking-vision as requested
   ]
 
@@ -437,14 +437,14 @@ const Header = () => {
               <div className="pt-4 pb-3 border-t border-gray-200">
                 <div className="flex flex-col space-y-3">
                   <Link href="/login" onClick={() => setIsMenuOpen(false)}>
-                    <Button variant="ghost" size="sm" className="w-full text-gray-700">
+                    {/* <Button variant="ghost" size="sm" className="w-full text-gray-700">
                       Log In
-                    </Button>
+                    </Button> */}
                   </Link>
                   <Link href="/signup" onClick={() => setIsMenuOpen(false)}>
-                    <Button size="sm" className="w-full bg-green-700 hover:bg-green-800 text-white">
+                    {/* <Button size="sm" className="w-full bg-green-700 hover:bg-green-800 text-white">
                       Get Started
-                    </Button>
+                    </Button> */}
                   </Link>
                 </div>
               </div>

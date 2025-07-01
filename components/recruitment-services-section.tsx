@@ -22,28 +22,22 @@ const CompactRecruitmentServicesSection = () => {
         "Comprehensive AI-powered hiring solution with intelligent interviewing, sourcing, and shortlisting capabilities.",
       products: [
         {
-          name: "SmartInterview Pro",
-          slug: "smart-interview-pro",
+          name: "HireVision-Interviewer",
+          // slug: "smart-interview-pro",
           description: "AI-powered interview conductor with real-time assessment",
           // count: 5, // Dummy count for demonstration
         },
         {
-          name: "TalentHunter Elite",
-          slug: "talent-hunter-elite",
+          name: "HireVision-CV Analysis",
+          // slug: "talent-hunter-elite",
           description: "Advanced candidate sourcing with AI-driven matching",
           // count: 12, // Dummy count
         },
         {
-          name: "QuickSelect Master",
+          name: "HireVision-Assessment",
           slug: "quick-select-master",
           description: "Intelligent shortlisting with predictive analytics",
           // count: 8, // Dummy count
-        },
-        {
-          name: "Candidate Profiler",
-          slug: "candidate-profiler",
-          description: "Detailed candidate insights",
-          // count: 3, // Dummy count
         },
       ],
     },
@@ -59,27 +53,21 @@ const CompactRecruitmentServicesSection = () => {
       products: [
         {
           name: "ResumeGenius AI",
-          slug: "resume-genius-ai",
+          // slug: "resume-genius-ai",
           description: "Next-gen resume analysis with deep learning insights",
           // count: 7,
         },
         {
-          name: "TalentScope Analytics",
-          slug: "talent-scope-analytics",
+          name: "Product 1",
+          // slug: "talent-scope-analytics",
           description: "Comprehensive talent market analysis and benchmarking",
           // count: 15,
         },
         {
-          name: "ProfileMaster Pro",
+          name: "Product 2",
           slug: "profile-master-pro",
           description: "Advanced candidate profiling with behavioral insights",
           // count: 10,
-        },
-        {
-          name: "Market Intelligence",
-          slug: "market-intelligence",
-          description: "Insights into talent market trends",
-          // count: 4,
         },
       ],
     },
@@ -149,7 +137,7 @@ const CompactRecruitmentServicesSection = () => {
 
                   {/* Dark Title Bar */}
                   <a
-                    href={`/services/${service.slug}`} // Make the entire bar clickable
+                    href={`/Domain/${service.slug}`} // Make the entire bar clickable
                     className="flex items-center justify-between bg-red-600 text-white p-4 cursor-pointer hover:bg-red-700 transition-colors" // Updated to red-800
                   >
                     <h3 className="text-xl font-bold">{service.title}</h3>

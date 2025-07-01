@@ -255,12 +255,12 @@ const Footer = () => {
           <h4 className="text-lg font-semibold mb-4">Domain</h4>
           <ul className="text-gray-400 space-y-2">
             <li>
-              <a href="/services/HireVision" className="hover:text-white">
+              <a href="/Domain/HireVision" className="hover:text-white">
                 HireVision
               </a>
             </li>
             <li>
-              <a href="/services/HireVision/LearningVision" className="hover:text-white">
+              <a href="/Domain/LearningVision" className="hover:text-white">
                 LearningVision
               </a>
             </li>
