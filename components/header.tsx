@@ -305,21 +305,35 @@
 
 import Link from "next/link"
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+  
+  // Check if we're on HireVision pages
+  const isHireVisionPage = pathname?.includes('/HireVision')
+  const isHireVisionSubPage = pathname?.includes('/HireVision/HireVision-')
+  const isHireVisionMainPage = pathname === '/Domain/HireVision'
 
   const navigationItems = [
-    { name: "Home", href: "/" },
-    { name: "Domain", href: "#", hasDropdown: true, clickable: false },
-    { name: "Pricing", href: "/pricing" },
+    { 
+      name: "Home", 
+      href: isHireVisionSubPage ? "/Domain/HireVision" : "/" 
+    },
+    { name: isHireVisionPage ? "Products" : "Domain", href: "#", hasDropdown: true, clickable: false },
+    // { name: "Pricing", href: "/pricing" },
     { name: "About Us", href: "/about" },
     { name: "Contact us", href: "/contact" },
   ]
 
-  const recruitmentServices = [
+  const recruitmentServices = isHireVisionPage ? [
+    { name: "HireVision-Assessment", href: "/Domain/HireVision/HireVision-Assessment" },
+    { name: "HireVision-CVAnalysis", href: "/Domain/HireVision/HireVision-CVAnalysis" },
+    { name: "HireVision-Interviewer", href: "/Domain/HireVision/HireVision-Interviewer" },
+  ] : [
     { name: "HireVision", href: "/Domain/HireVision" },
     { name: "LearningVision", href: "/Domain/LearningVision" },
     // Removed Banking-vision as requested
@@ -357,7 +371,7 @@ const Header = () => {
                       <span className="text-gray-700 px-3 py-2 text-sm font-medium cursor-default">{item.name}</span>
                     )}
                     {item.hasDropdown && (
-                      <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-100">
                         <div className="py-2">
                           {recruitmentServices.map((service) => (
                             <Link

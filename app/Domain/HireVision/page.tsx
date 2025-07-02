@@ -247,25 +247,14 @@
 "use client"
 
 import Link from "next/link"
-import {
-  Brain,
-  Search,
-  Filter,
-  Users,
-  Eye,
-  Sparkles,
-  MessageSquare,
-  ChevronDown,
-  Calendar,
-  FileText,
-  ArrowRight,
-} from "lucide-react"
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Menu, X, MessageSquare, Calendar, Eye, Sparkles, Users, FileText } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import Footer from "@/components/footer"
-import Header from "@/components/header"
+import HireVisionHeader from "@/components/hirevision-header"
 
 export default function WhyYantrAIPage() {
   const router = useRouter()
@@ -338,7 +327,7 @@ export default function WhyYantrAIPage() {
 
   return (
     <>
-      <Header />
+      <HireVisionHeader isMainHireVisionPage={true} />
       <div className="min-h-screen bg-red-50">
         {/* Hero Section */}
         <section
@@ -455,64 +444,6 @@ export default function WhyYantrAIPage() {
                   </Link>
                 </motion.div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing Section */}
-        <section className="py-16 bg-red-80">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Pricing</h2>
-              <p className="text-gray-600">Free for small businesses. Paid for bigger companies with multiple accounts.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Single Plan */}
-              <div className="bg-white rounded-xl shadow p-8 flex flex-col items-center border border-gray-200">
-                <Users className="w-8 h-8 mb-2 text-red-400" />
-                <h3 className="text-lg font-semibold mb-2 text-gray-900 tracking-widest">SINGLE</h3>
-                <div className="text-3xl font-bold text-gray-900 mb-1">Free</div>
-                <ul className="text-gray-600 text-sm mb-6 space-y-1 text-center">
-                  <li>Unique Klets Address</li>
-                  <li>Customized Design</li>
-                  <li>1 Team Member</li>
-                  <li>Max 10 Chats Per Week</li>
-                  <li>E-mail Fallback</li>
-                </ul>
-                <button className="mt-auto bg-red-600 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-full transition">GET IT NOW</button>
-              </div>
-              {/* Team Plan */}
-              <div className="bg-white rounded-xl shadow p-8 flex flex-col items-center border-2 border-red-300">
-                <Users className="w-8 h-8 mb-2 text-red-400" />
-                <h3 className="text-lg font-semibold mb-2 text-gray-900 tracking-widest">TEAM</h3>
-                <div className="text-3xl font-bold text-gray-900 mb-1">$49<span className="text-base font-normal text-gray-500">/month</span></div>
-                <ul className="text-gray-600 text-sm mb-6 space-y-1 text-center">
-                  <li>Unique Klets Address</li>
-                  <li>Customized Design</li>
-                  <li>2-5 Team Members</li>
-                  <li>Unlimited Chats</li>
-                  <li>E-mail Fallback</li>
-                  <li>Soon: Reports & Analytics</li>
-                </ul>
-                <button className="mt-auto bg-red-600 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-full transition">TRY IT NOW</button>
-                {/* <span className="text-xs text-gray-500 mt-2 italic">14 day free trial</span> */}
-              </div>
-              {/* Enterprise Plan */}
-              <div className="bg-white rounded-xl shadow p-8 flex flex-col items-center border border-gray-200">
-                <Users className="w-8 h-8 mb-2 text-red-400" />
-                <h3 className="text-lg font-semibold mb-2 text-gray-900 tracking-widest">ENTERPRISE</h3>
-                <div className="text-3xl font-bold text-gray-900 mb-1">POA</div>
-                <ul className="text-gray-600 text-sm mb-6 space-y-1 text-center">
-                  <li>Host on Custom Domain</li>
-                  <li>Customized Design</li>
-                  <li>Unlimited Team Members</li>
-                  <li>Unlimited Accounts</li>
-                  <li>E-mail Fallback</li>
-                  <li>Soon: Reports & Analytics</li>
-                  <li>Advanced Integrations</li>
-                </ul>
-                <button className="mt-auto bg-red-600 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-full transition">GET IN TOUCH</button>
-              </div>
             </div>
           </div>
         </section>

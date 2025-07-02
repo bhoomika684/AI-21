@@ -237,6 +237,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -252,7 +253,7 @@ import {
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import Footer from "@/components/footer"
-import Header from "@/components/header"
+import HireVisionHeader from "@/components/hirevision-header"
 
 const SmartInterviewProPage = () => {
   const router = useRouter()
@@ -306,7 +307,7 @@ const SmartInterviewProPage = () => {
 
   return (
     <>
-      <Header />
+      <HireVisionHeader />
       <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-100">
         {/* Hero Section */}
         <section className="w-full py-10 bg-gradient-to-br from-red-50 via-white to-red-100 border-b border-red-100 relative overflow-hidden">
