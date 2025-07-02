@@ -806,7 +806,7 @@ const SmartInterviewProPage = () => {
               {/* Right: The Solution */}
               <div className="space-y-4 flex flex-col items-start">
                 <Badge className="bg-green-100 text-green-700 px-3 py-1 mb-2">The Solution</Badge>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">VideoBot transforms static</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">AI That Thinks Like You</h2>
                 <div className="space-y-4 text-lg text-gray-700 mt-4">
                   <p>
                     <span className="font-bold text-green-600">VideoBot transforms static</span>training videos into interactive, AI-driven experiences — letting employees ask questions and get instant,  accurate answers from the video itself.

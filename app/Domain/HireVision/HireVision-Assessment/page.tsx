@@ -136,8 +136,8 @@ const SmartInterviewProPage = () => {
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 self-start">Stuck with Outdated Assessments?</h2>
                 <div className="space-y-4 text-lg text-gray-700 w-full">
                   <p>
-                    <strong className="text-red-600">HireVision–TestAssessment </strong>enables dynamic, intelligent assessments 
-                    <strong className="text-red-600">with automated scoring, adaptive</strong>
+                    <strong className="text-red-600">HireVision–TestAssessment </strong> enables dynamic, intelligent assessments 
+                    <strong className="text-red-600"> with automated scoring, adaptive </strong>
                     question logic, and real-time analytics—delivering deeper, faster insights.
                   </p>
                   <p>Tailors questions based on candidate responses</p>
@@ -168,7 +168,7 @@ const SmartInterviewProPage = () => {
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 self-start">AI That Thinks Like You</h2>
                 <div className="space-y-4 text-lg text-gray-700 w-full">
                   <p>
-                    <strong className="text-green-600">HireVision CV Analysis</strong> uses advanced AI to understand job requirements and candidate qualifications at a deeper level.
+                    <strong className="text-green-600">HireVision-Assessment</strong> enables dynamic, intelligent assessments with automated scoring, adaptive question logic, and real-time analytics — delivering deeper, faster insights.
                   </p>
                   <ul className="space-y-3 ml-0">
                     {benefits.map((benefit, index) => (
