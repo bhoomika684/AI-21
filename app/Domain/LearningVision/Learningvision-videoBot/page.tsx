@@ -739,14 +739,14 @@ const SmartInterviewProPage = () => {
                 VideoBot transforms static training content into an AI-driven, interactive learning experience — where employees can ask questions and get instant, accurate answers from the video itself.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
+                {/* <Button
                   size="lg"
                   variant="outline"
                   className="border-red-200 text-red-700 hover:bg-red-50 bg-transparent"
                 >
                   Watch Demo
                   <Video className="ml-2 h-5 w-5" />
-                </Button>
+                </Button> */}
               </div>
             </motion.div>
           </div>
@@ -778,26 +778,26 @@ const SmartInterviewProPage = () => {
               {/* Left: The Problem */}
               <div className="space-y-4 flex flex-col items-start">
                 <Badge className="bg-red-100 text-red-700 px-3 py-1 mb-2">The Problem</Badge>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">Traditional video training often leaves learners behind. No interaction. Low retention. Lots of wasted time.</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">The Problem with Passive Learning</h2>
                 <div className="space-y-4 text-lg text-gray-700 mt-4">
                   <p>
                     <span className="font-bold text-red-600">Learners are forced</span> to scrub through long footage,
                     <span className="font-bold text-red-600"> can't ask questions,</span>
                     and often walk away confused. The result?
                   </p>
-                  <p>Low engagement and poor attention</p>
+                  <p>Limited learner interaction and engagement</p>
                   <ul className="space-y-2 ml-4">
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-red-500 rounded-full inline-block" />
-                      Struggles with retaining complex topics
+                       Poor retention of key concepts
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-red-500 rounded-full inline-block" />
-                      Incomplete understanding and wasted effort
+                      Repetitive trainer follow-ups
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-red-500 rounded-full inline-block" />
-                      Training investments that don’t deliver real outcomes
+                    Time-consuming navigation through long videos
                     </li>
                   </ul>
                 </div>
@@ -806,10 +806,10 @@ const SmartInterviewProPage = () => {
               {/* Right: The Solution */}
               <div className="space-y-4 flex flex-col items-start">
                 <Badge className="bg-green-100 text-green-700 px-3 py-1 mb-2">The Solution</Badge>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">Perfect For Teams Who Want to:</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">VideoBot transforms static</h2>
                 <div className="space-y-4 text-lg text-gray-700 mt-4">
                   <p>
-                    <span className="font-bold text-green-600">HireVision CV-Analysis</span> uses advanced AI to understand job requirements and candidate qualifications at a deeper level.
+                    <span className="font-bold text-green-600">VideoBot transforms static</span>training videos into interactive, AI-driven experiences — letting employees ask questions and get instant,  accurate answers from the video itself.
                   </p>
                   <ul className="space-y-3 ml-2">
                     {benefits.map((benefit, index) => (
