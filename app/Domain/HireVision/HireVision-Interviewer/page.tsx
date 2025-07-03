@@ -75,12 +75,13 @@ const SmartInterviewProPage = () => {
       <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-100">
         {/* Hero Section */}
         <section className="w-full py-10 bg-gradient-to-br from-red-50 via-white to-red-100 border-b border-red-100 relative overflow-hidden">
-          <img
+          {/* Remove empty src image to prevent browser error */}
+          {/* <img
             src=""
             alt=""
             className="hidden md:block absolute inset-0 w-full h-full object-contain opacity-30 mix-blend-multiply pointer-events-none select-none"
             style={{ zIndex: 1 }}
-          />
+          /> */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -146,7 +147,7 @@ const SmartInterviewProPage = () => {
                 <div className="space-y-4 text-lg text-gray-700">
                   <p>
                     <strong className="text-red-600">Manual interviews</strong> are time-consuming, inconsistent
-                    <strong className="text-red-600"> and hard to scale.</strong>
+                    <strong className="text-red-600"> and hard to scale. </strong>
                    Recruiters face scheduling chaos, subjective evaluations, and missed insights — making quality hiring inefficient and biased.
                   </p>
                   <p> Unstructured and inconsistent assessments</p>

@@ -139,7 +139,7 @@ export default function SmartInterviewProPage() {
                 <div className="space-y-4 text-lg text-gray-700 w-full">
                   <p>
                     <strong className="text-red-600">Hundreds of CVs </strong>for each role. 
-                    <strong className="text-red-600"> Manual screening is slow and error-prone.</strong>
+                    <strong className="text-red-600"> Manual screening is slow and error-prone. </strong>
                     Top candidates slip through while recruiters battle volume and inefficiency.
                   </p>
                   <p>Traditional keyword filters miss context and nuance, leading to:</p>

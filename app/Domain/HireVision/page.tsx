@@ -355,7 +355,7 @@ export default function WhyYantrAIPage() {
                   size="lg"
                   variant="outline"
                   className="border-white text-white hover:bg-red-600 bg-red"
-                  onClick={() => router.push("")}
+                  onClick={() => router.push("tn-m-frontend-umber.vercel.app")}
                 >
                   Get Started
                   <Users className="ml-2 h-5 w-5" />

@@ -782,7 +782,7 @@ const SmartInterviewProPage = () => {
                 <div className="space-y-4 text-lg text-gray-700 mt-4">
                   <p>
                     <span className="font-bold text-red-600">Learners are forced</span> to scrub through long footage,
-                    <span className="font-bold text-red-600"> can't ask questions,</span>
+                    <span className="font-bold text-red-600"> can't ask questions, </span>
                     and often walk away confused. The result?
                   </p>
                   <p>Limited learner interaction and engagement</p>
@@ -809,7 +809,7 @@ const SmartInterviewProPage = () => {
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">AI That Thinks Like You</h2>
                 <div className="space-y-4 text-lg text-gray-700 mt-4">
                   <p>
-                    <span className="font-bold text-green-600">VideoBot transforms static</span>training videos into interactive, AI-driven experiences — letting employees ask questions and get instant,  accurate answers from the video itself.
+                    <span className="font-bold text-green-600">VideoBot transforms static </span>training videos into interactive, AI-driven experiences — letting employees ask questions and get instant,  accurate answers from the video itself.
                   </p>
                   <ul className="space-y-3 ml-2">
                     {benefits.map((benefit, index) => (

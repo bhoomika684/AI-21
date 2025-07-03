@@ -136,9 +136,9 @@ const SmartInterviewProPage = () => {
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 self-start">Stuck with Outdated Assessments?</h2>
                 <div className="space-y-4 text-lg text-gray-700 w-full">
                   <p>
-                    <strong className="text-red-600">HireVision–TestAssessment </strong> enables dynamic, intelligent assessments 
-                    <strong className="text-red-600"> with automated scoring, adaptive </strong>
-                    question logic, and real-time analytics—delivering deeper, faster insights.
+                    <strong className="text-red-600">Static tests don’t reflect real job challenges</strong> Manual grading consumes time. 
+                    <strong className="text-red-600"> Many assessments lack adaptability and deliver shallow insights  </strong>
+                    — leading to poor hiring outcomes.
                   </p>
                   <p>Tailors questions based on candidate responses</p>
                   <ul className="space-y-2 ml-0">
