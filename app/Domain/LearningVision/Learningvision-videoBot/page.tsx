@@ -660,7 +660,7 @@ import {
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import Footer from "@/components/footer"
-import Header from "@/components/header"
+import LearningVisionHeader from "@/components/learningvision-header"
 
 const SmartInterviewProPage = () => {
   const router = useRouter()
@@ -715,7 +715,7 @@ const SmartInterviewProPage = () => {
 
   return (
     <>
-      <Header />
+      <LearningVisionHeader />
       <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-100">
         {/* Hero Section */}
         <section className="w-full py-10 md:py-20 bg-gradient-to-br from-red-50 via-white to-red-100 relative overflow-hidden">

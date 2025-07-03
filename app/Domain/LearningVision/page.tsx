@@ -14,7 +14,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Footer from "@/components/footer"
-import Header from "@/components/header"
+import LearningVisionHeader from "@/components/learningvision-header"
 
 export default function WhyYantrAIPage() {
   const router = useRouter()
@@ -71,7 +71,7 @@ export default function WhyYantrAIPage() {
 
   return (
     <>
-      <Header />
+      <LearningVisionHeader isMainLearningVisionPage={true} />
       <div className="min-h-screen bg-red-50">
         {/* Hero Section */}
         <section
