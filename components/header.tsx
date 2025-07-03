@@ -313,31 +313,59 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
   
-  // Check if we're on HireVision pages
+  // Check if we're on HireVision or LearningVision pages
   const isHireVisionPage = pathname?.includes('/HireVision')
   const isHireVisionSubPage = pathname?.includes('/HireVision/HireVision-')
   const isHireVisionMainPage = pathname === '/Domain/HireVision'
+  const isLearningVisionPage = pathname?.startsWith('/Domain/LearningVision')
+  const isLearningVisionMainPage = pathname === '/Domain/LearningVision'
 
-  const navigationItems = [
-    { 
-      name: "Home", 
-      href: isHireVisionSubPage ? "/Domain/HireVision" : "/" 
-    },
-    { name: isHireVisionPage ? "Products" : "Domain", href: "#", hasDropdown: true, clickable: false },
-    // { name: "Pricing", href: "/pricing" },
-    { name: "About Us", href: "/about" },
-    { name: "Contact us", href: "/contact" },
-  ]
+  // Remove "Pricing" from header only on the main page ("/")
+  const isHomePage = pathname === "/"
 
-  const recruitmentServices = isHireVisionPage ? [
-    { name: "HireVision-Assessment", href: "/Domain/HireVision/HireVision-Assessment" },
-    { name: "HireVision-CVAnalysis", href: "/Domain/HireVision/HireVision-CVAnalysis" },
-    { name: "HireVision-Interviewer", href: "/Domain/HireVision/HireVision-Interviewer" },
-  ] : [
-    { name: "HireVision", href: "/Domain/HireVision" },
-    { name: "LearningVision", href: "/Domain/LearningVision" },
-    // Removed Banking-vision as requested
-  ]
+  // Navigation items logic
+  let navigationItems
+  let recruitmentServices
+
+  if (isLearningVisionPage) {
+    navigationItems = [
+      { name: "Home", href: "/" },
+      { name: "Products", href: "#", hasDropdown: true, clickable: false },
+      // Only include Pricing if not on the home page
+      ...(!isHomePage ? [{ name: "Pricing", href: "/pricing" }] : []),
+      { name: "About Us", href: "/about" },
+      { name: "Contact us", href: "/contact" },
+    ]
+    recruitmentServices = [
+      { name: "Learningvision-videoBot", href: "/Domain/LearningVision/Learningvision-videoBot" },
+    ]
+  } else if (isHireVisionPage) {
+    navigationItems = [
+      { name: "Home", href: isHireVisionSubPage ? "/Domain/HireVision" : "/" },
+      { name: "Products", href: "#", hasDropdown: true, clickable: false },
+      ...(!isHomePage ? [{ name: "Pricing", href: "/pricing" }] : []),
+      { name: "About Us", href: "/about" },
+      { name: "Contact us", href: "/contact" },
+    ]
+    recruitmentServices = [
+      { name: "HireVision-Assessment", href: "/Domain/HireVision/HireVision-Assessment" },
+      { name: "HireVision-CVAnalysis", href: "/Domain/HireVision/HireVision-CVAnalysis" },
+      { name: "HireVision-Interviewer", href: "/Domain/HireVision/HireVision-Interviewer" },
+    ]
+  } else {
+    navigationItems = [
+      { name: "Home", href: "/" },
+      { name: "Domain", href: "#", hasDropdown: true, clickable: false },
+      ...(!isHomePage ? [{ name: "Pricing", href: "/pricing" }] : []),
+      { name: "About Us", href: "/about" },
+      { name: "Contact us", href: "/contact" },
+    ]
+    recruitmentServices = [
+      { name: "HireVision", href: "/Domain/HireVision" },
+      { name: "LearningVision", href: "/Domain/LearningVision" },
+      // Removed Banking-vision as requested
+    ]
+  }
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">

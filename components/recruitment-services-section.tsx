@@ -45,7 +45,7 @@ const CompactRecruitmentServicesSection = () => {
       id: 2,
       title: "LearningVision",
       icon: "Eye",
-      slug: "HireVision/LearningVision",
+      slug: "/LearningVision",
       imageUrl: "https://images.pexels.com/photos/3771055/pexels-photo-3771055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", // Updated image URL for 2nd service
       color: "bg-blue-50 text-blue-600 border-blue-200", // Can be adjusted if icons were used
       description:
