@@ -50,8 +50,8 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-red-50">
-      <div className="backdrop-brightness-95 backdrop-blur-sm">
+    <div className="min-h-screen bg-white">
+      <div>
         <Header />
 
         {/* Banner */}

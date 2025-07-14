@@ -51,7 +51,11 @@ const FeaturesSection = () => {
     {
       icon: Smartphone, // Mobile-First & Intuitive UI
       title: "Device independent & Intuitive UI",
-      description: "Designed with accessibility and speed in mind, AI-21 performs seamlessly across devices.",
+      description: (
+        <>
+          Designed for accessibility and speed, <span className="font-semibold">AI-<span className="italic">TwentyOne</span></span> adapts to any device for a truly intuitive experience.
+        </>
+      ),
       gradient: "from-yellow-400 to-amber-500",
       bgColor: "bg-yellow-50",
       textColor: "text-yellow-600",
@@ -62,18 +66,15 @@ const FeaturesSection = () => {
       title: "Seamless Integrations",
       description: "Easily integrates with your existing systems, platforms, and data workflows for smooth adoption.",
       gradient: "from-red-400 to-pink-600",
-      bgColor: "bg-red-50",
+      bgColor: "bg-red-20",
       textColor: "text-red-600",
       delay: 0.6,
     },
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-red-50 via-rose-100 to-red-100 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-red-200 to-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-rose-200 to-red-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000" />
+    <section className="py-20 bg-white relative overflow-hidden">
+      {/* Remove all background decorations for pure white bg */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -92,7 +93,7 @@ const FeaturesSection = () => {
             FEATURES
           </motion.p> */}
           <motion.h2
-            className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent"
+            className="text-3xl lg:text-4xl font-bold text-red-600"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -105,15 +106,14 @@ const FeaturesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Key Features That Make AI-21 Stand Out
+            Key Features That Make AI-<span className='italic'>TwentyOne</span>  Stand Out
           </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => {
-            const IconComponent = feature.icon
-            const isHovered = hoveredIndex === index
-
+            const IconComponent = feature.icon;
+            const isHovered = hoveredIndex === index;
             return (
               <motion.div
                 key={index}
@@ -125,42 +125,38 @@ const FeaturesSection = () => {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                <Card className="relative bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden h-full">
+                <Card className="relative bg-gray-100 border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden h-full rounded-3xl">
                   <motion.div
-                    className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 transition-opacity duration-500`}
+                    className={`absolute inset-0 bg-white opacity-0 transition-opacity duration-500 rounded-3xl`}
                     animate={{ opacity: isHovered ? 0.05 : 0 }}
                   />
-
                   <motion.div
-                    className={`absolute inset-0 rounded-lg bg-gradient-to-r ${feature.gradient} opacity-0`}
+                    className={`absolute inset-0 rounded-3xl bg-white opacity-0`}
                     animate={{ opacity: isHovered ? 1 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="absolute inset-[1px] bg-white rounded-lg" />
+                    <div className="absolute inset-[1px] bg-white rounded-3xl" />
                   </motion.div>
-
                   <div className="relative z-10">
                     <CardHeader className="space-y-4 pb-4">
                       <motion.div
-                        className={`w-16 h-16 rounded-xl ${feature.bgColor} flex items-center justify-center relative overflow-hidden`}
+                        className={`w-10 h-10 rounded-xl bg-white flex items-center justify-center relative overflow-hidden`}
                         whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
                         <motion.div
-                          className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0`}
+                          className={`absolute inset-0 bg-white opacity-0`}
                           animate={{ opacity: isHovered ? 0.2 : 0 }}
                           transition={{ duration: 0.3 }}
                         />
                         <IconComponent
-                          className={`h-8 w-8 ${feature.textColor} relative z-10 transition-colors duration-300`}
+                          className={`h-4 w-4 ${feature.textColor} relative z-10 transition-colors duration-300`}
                         />
                       </motion.div>
-
                       <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-gray-800 transition-colors duration-300">
                         {feature.title}
                       </CardTitle>
                     </CardHeader>
-
                     <AnimatePresence>
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
@@ -181,13 +177,12 @@ const FeaturesSection = () => {
                             animate={{ y: isHovered ? 0 : 20 }}
                             transition={{ delay: isHovered ? 0.1 : 0 }}
                           >
-                            <div className={`w-12 h-0.5 bg-gradient-to-r ${feature.gradient} mb-4 rounded-full`} />
+                            <div className={`w-12 h-0.5 bg-white mb-4 rounded-full`} />
                             <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                           </motion.div>
                         </CardContent>
                       </motion.div>
                     </AnimatePresence>
-
                     <motion.div
                       className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       animate={{
@@ -195,12 +190,12 @@ const FeaturesSection = () => {
                         opacity: isHovered ? 1 : 0,
                       }}
                     >
-                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${feature.gradient}`} />
+                      <div className={`w-2 h-2 rounded-full bg-white`} />
                     </motion.div>
                   </div>
                 </Card>
               </motion.div>
-            )
+            );
           })}
         </div>
       </div>

@@ -52,9 +52,11 @@ const AboutUsPage = () => {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-red-50">
+      <div className="relative min-h-screen bg-white overflow-hidden">
+        {/* Remove video background and overlays for solid white background */}
+        <div className="relative z-20">
         {/* Our Story */}
-        <section className="py-20">
+        <section className="py-5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -115,13 +117,15 @@ const AboutUsPage = () => {
                     transition={{ duration: 0.6, delay: i * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="hover:shadow-lg transition">
-                      <CardContent className="p-6 space-y-4">
-                        <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                          <Icon className="text-red-600" />
+                    <Card className="hover:shadow-lg transition h-full flex flex-col justify-between min-h-[220px]">
+                      <CardContent className="p-6 space-y-4 h-full flex flex-col justify-between">
+                        <div>
+                          <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-2">
+                            <Icon className="text-red-600" />
+                          </div>
+                          <h3 className="text-xl font-semibold text-gray-900">{value.title}</h3>
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-900">{value.title}</h3>
-                        <p className="text-gray-600 text-sm">{value.description}</p>
+                        <p className="text-gray-600 text-sm flex-1">{value.description}</p>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -132,46 +136,32 @@ const AboutUsPage = () => {
         </section>
 
         {/* Call to Action Section */}
-        <section className="py-20 bg-gradient-to-r from-red-600 to-red-700">
+        <section className="py-20 bg-red-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center space-y-3"
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white">
-                Ready to unlock the power of<br></br>
-real-time AI insights?
+            <div className="text-center space-y-8">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-red-600">
+                Ready to unlock the power of<br />
+                real-time AI insights?
               </h2>
-              <p className="text-xl text-red-100 max-w-3xl mx-auto">
-                Reimagine work with AI-21 — let’s get started.
+              <p className="text-2xl text-red-600 font-semibold">
+                Reimagine work with AI-<span className='italic'>TwentyOne</span> — let’s get started.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                {/* <Button
-                  size="lg"
-                  className="bg-white text-red-600 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-                >
-                  Start Free Trial
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button> */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                 <Link href="/contact">
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white text-white hover:bg-white/10 bg-transparent"
+                    className="border border-red-600 text-red-600 font-semibold text-lg px-10 py-2 rounded-md hover:bg-white hover:text-red-700 transition-all bg-transparent"
                   >
                     Contact Us
-                    <Users className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>
+        </div>
       <Footer />
     </>
   );

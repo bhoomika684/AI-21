@@ -7,7 +7,7 @@ import Footer from "@/components/footer"
 import Header from "@/components/header"
 
 export const metadata: Metadata = {
-  title: "Interview Pro - Professional Interview Management | AI-21",
+  title: "Interview Pro - Professional Interview Management | AI-<span className='italic'>TwentyOne</span> ",
   description:
     "Comprehensive interview management platform with AI-powered question banks, real-time scoring, and collaborative evaluation tools.",
 }

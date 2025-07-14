@@ -62,7 +62,7 @@ export default function WhyYantrAIPage() {
     {
       icon: MessageSquare,
       title: "LearningVision – VideoBot",
-      slug: "/Domain/LearningVision/Learningvision-videoBot",
+      slug: "/Product/LearningVision/Learningvision-videoBot",
       description:
         "An AI-powered training assistant that analyzes your training videos and enables a smart, interactive chatbot next to the video.",
       features: [],
@@ -83,30 +83,22 @@ export default function WhyYantrAIPage() {
         >
           <div className="absolute inset-0 bg-black bg-opacity-50" />
           <div className="relative z-10 flex items-center h-full px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="max-w-3xl text-white"
-            >
-              <h1 className="text-4xl lg:text-5xl font-semibold mb-4 leading-relaxed">
-                LearningVision
+            <div className="max-w-3xl mx-auto text-center py-20">
+              <h1 className="text-4xl lg:text-5xl font-extrabold text-red-600 mb-6">
+                Ready to unlock the power of<br />real-time AI insights?
               </h1>
-              <p className="text-lg text-white font-medium">
-                AI-powered solutions designed for Learning & Development teams
-                across every industry — enabling smarter training, upskilling,
-                and growth.
-              </p><br></br>
+              <p className="text-2xl text-red-600 font-semibold mb-8">
+                Reimagine work with AI-<span className='italic'>TwentyOne</span> — let’s get started.
+              </p>
               <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-red-600 bg-red"
-                  onClick={() => router.push("")}
-                >
-                  Get Started
-                  <Users className="ml-2 h-5 w-5" />
-                </Button> 
-            </motion.div>
+                size="lg"
+                variant="outline"
+                className="border border-red-600 text-red-600 font-semibold text-lg px-10 py-2 rounded-md hover:bg-white hover:text-red-700 transition-all bg-transparent"
+                onClick={() => router.push("/contact")}
+              >
+                Contact Us
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -189,9 +181,7 @@ export default function WhyYantrAIPage() {
                           <li key={i}>{feature}</li>
                         ))}
                       </ul>
-                      <div className="mt-4 text-red-600 font-medium hover:underline">
-                        Learn More
-                      </div>
+                      <div className="mt-2 text-red-700 font-medium">Learn More</div>
                     </div>
                   </Link>
                 </motion.div>
@@ -203,18 +193,18 @@ export default function WhyYantrAIPage() {
         {/* Pricing Section removed as requested */}
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-[#e53935] to-[#c62828] text-white py-20 px-6 text-center">
+        <section className="bg-red-50 text-black py-20 px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-extrabold mb-3 leading-snug">
               Ready to unlock the power of<br /> real-time AI insights?
             </h2>
             <p className="text-lg md:text-xl font-medium mb-5">
-              Reimagine work with AI-21 — let’s get started.
+              Reimagine work with AI-<span className='italic text-red-700'>TwentyOne</span>  — let’s get started.
             </p>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10 bg-transparent"
+              className="border-red-700 text-red-700 hover:bg-red-100 bg-transparent"
               onClick={() => router.push("/contact")}
             >
               Contact Us

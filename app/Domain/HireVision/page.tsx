@@ -82,7 +82,7 @@ export default function WhyYantrAIPage() {
   return (
     <>
       <HireVisionHeader isMainHireVisionPage={true} />
-      <div className="min-h-screen bg-red-50">
+      <div className="min-h-screen bg-white">
         {/* Hero Section */}
         <section
           className="relative h-[500px] bg-cover bg-center bg-no-repeat"
@@ -109,7 +109,7 @@ export default function WhyYantrAIPage() {
                   size="lg"
                   variant="outline"
                   className="border-white text-white hover:bg-red-600 bg-red"
-                  onClick={() => router.push("tn-m-frontend-umber.vercel.app")}
+                  onClick={() => router.push("")}
                 >
                   Get Started
                   <Users className="ml-2 h-5 w-5" />
@@ -140,7 +140,7 @@ export default function WhyYantrAIPage() {
                 >
                   <Card className="border border-gray-200 bg-white shadow-md h-full flex flex-col justify-between min-h-[210px] rounded-xl hover:shadow-xl hover:border-red-300 transition-all duration-300">
                     <CardContent className="text-center flex flex-col h-full p-4">
-                      <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center border border-red-200 rounded-full bg-red-50">
+                      <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center border border-red-200 rounded-full bg-white">
                         <feature.icon className="w-6 h-6 text-purple-600" />
                       </div>
                       <h3 className="text-base font-semibold text-red-700 mb-2">
@@ -176,7 +176,7 @@ export default function WhyYantrAIPage() {
                   <Link href={product.slug} className="h-full flex-1">
                     <div className="h-full flex flex-col text-left border p-6 rounded-2xl shadow hover:shadow-lg cursor-pointer transition">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center">
+                        <div className="w-12 h-12 bg-white text-white rounded-full flex items-center justify-center">
                           <product.icon className="w-6 h-6" />
                         </div>
                         <h4 className="text-xl font-semibold text-red-700">
@@ -217,7 +217,7 @@ export default function WhyYantrAIPage() {
 real-time AI insights?
               </h2>
               <p className="text-xl text-red-100 max-w-3xl mx-auto">
-                Reimagine work with AI-21 — let’s get started.
+                Reimagine work with AI-<span className='italic'>TwentyOne</span>  — let’s get started.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 {/* <Button

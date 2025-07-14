@@ -135,29 +135,11 @@ const SmartInterviewProPage = () => {
                 <Badge className="bg-red-100 text-red-700 px-3 py-1 self-start">The Problem</Badge>
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 self-start">Stuck with Outdated Assessments?</h2>
                 <div className="space-y-4 text-lg text-gray-700 w-full">
-                  <p>
-                    <strong className="text-red-600">Static tests don’t reflect real job challenges</strong> Manual grading consumes time. 
-                    <strong className="text-red-600"> Many assessments lack adaptability and deliver shallow insights  </strong>
-                    — leading to poor hiring outcomes.
-                  </p>
-                  <p>Tailors questions based on candidate responses</p>
-                  <ul className="space-y-2 ml-0">
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full" />
-                      Automatically scores and ranks candidates
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full" />
-                      Provides real-time, actionable analytics
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full" />
-                      Ideal for technical/analytical roles and internal audits
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full" />
-                      Supports high-volume and post-training evaluations
-                    </li>
+                  <ul className="space-y-6 ml-0">
+                    <li className="text-lg">Static tests don’t reflect real job challenges</li>
+                    <li className="text-lg">Manual grading is time-consuming</li>
+                    <li className="text-lg">Lack of adaptability and personalization</li>
+                    <li className="text-lg">Deliver shallow insights, leading to poor hiring outcomes</li>
                   </ul>
                 </div>
               </div>

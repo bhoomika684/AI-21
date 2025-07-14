@@ -22,11 +22,13 @@ const Footer = () => {
                 About Us
               </a>
             </li>
+            {/*
             <li>
               <a href="/pricing" className="hover:text-white">
                 Pricing
               </a>
             </li>
+            */}
             <li>
               <a href="/contact" className="hover:text-white">
                 Contact Us
@@ -35,23 +37,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Services */}
-        <div>
-          <h4 className="text-lg font-semibold mb-4">Domain</h4>
-          <ul className="text-gray-400 space-y-2">
-            <li>
-              <a href="/Domain/HireVision" className="hover:text-white">
-                HireVision
-              </a>
-            </li>
-            <li>
-              <a href="/Domain/LearningVision" className="hover:text-white">
-                LearningVision
-              </a>
-            </li>
-            {/* Removed Banking-vision as requested */}
-          </ul>
-        </div>
+        {/* Services section removed as requested */}
 
         {/* Contact Information */}
         <div>
